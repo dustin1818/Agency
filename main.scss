@@ -1,0 +1,182 @@
+// font
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito&family=Quicksand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@800&family=Quicksand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap");
+
+$Quicksand: "Quicksand", sans-serif;
+$QuicksandBold: 700;
+$Nunito: "Nunito", sans-serif;
+$NunitoBold: 800;
+$black: #1d1d1d;
+$grey: #464646;
+$blue: #377dff;
+
+body,
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: $black;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.btn {
+  padding: 12px 50px;
+  border: solid 1px $blue;
+  color: $blue;
+  border-radius: 24px;
+}
+
+header {
+  padding: 40px;
+  max-width: 1600px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  //   border: solid 2px black;
+  font-family: $Quicksand;
+
+  @media screen and (max-width: 768px) {
+    &__btn {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 575px) {
+    flex-direction: column;
+    gap: 2rem;
+}
+
+  &__logo {
+    img {
+      height: 45px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    gap: 1rem;
+
+    a:hover {
+      font-weight: 700;
+      color: $blue;
+      transition: 0.3s all;
+    }
+  }
+
+  &__btn {
+    font-weight: $QuicksandBold;
+
+    &:hover {
+      background: $blue;
+      transition: 0.6s all;
+      color: #fff;
+    }
+  }
+}
+
+main {
+  background: url(/img/Hero.png) no-repeat;
+  background-size: cover;
+
+  @media screen and (max-width:1345px) {
+    background-size: contain;
+  }
+
+  width: 100%;
+  margin-top: 20px;
+  min-height: 100vh;
+
+  .main__container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    justify-content: center;
+    align-items: center;
+    font-family: $Nunito;
+
+    .heading__wrapper {
+      text-align: center;
+      font-size: 1.6rem;
+      font-weight: $NunitoBold;
+    }
+
+    span {
+      text-align: center;
+      color: #464646;
+      opacity: 0.6;
+      font-size: 1.15rem;
+    }
+
+    a {
+      color: #fff;
+      background: $blue;
+      border: solid 1px $blue;
+      box-shadow: 0px 4px 8px rgba(55, 125, 255, 0.5);
+    
+    &:hover{
+        transform: scale(1.1);
+        transition: .5s all;
+    }
+    }
+
+    @media screen and (max-width: 768px) {
+        gap: .65rem;
+        // background-size: cover;
+
+        .heading__wrapper {
+          font-size: 1.25rem;
+          padding: 0px 20px;
+        }
+
+        span {
+          font-size: 0.95rem;
+          padding: 0 20px;
+        }
+
+        a {
+          font-size: 0.9rem;
+        }
+    }
+
+    @media screen and (max-width: 575px) {
+        margin-top: 0px;
+        gap: 1rem;
+
+        .heading__wrapper {
+            font-size: 1.1rem;
+          }
+
+          span{
+            font-size: .90rem;
+          }
+    }
+  }
+}
+
+// scrollbar styling 
+body::-webkit-scrollbar {
+    width: 1em;
+  }
+   
+  body::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+   
+  body::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+  }
